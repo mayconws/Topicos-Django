@@ -9,7 +9,7 @@ while len(msg_commit) < 5:
     msg_commit = input("Mensagem do commit: ")
 
 # Define um email padrão para este script
-email = "rafael.zottesso@ifpr.edu.br"
+email = "mayconwas2018@gmail.com"
 
 # O \n dentro do print funciona como o <br/> no HTML (pula mais uma linha)
 print("\n------------------------------------")
