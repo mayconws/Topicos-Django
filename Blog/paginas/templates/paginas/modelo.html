@@ -1,0 +1,200 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% block titulo %}
+    <title>:: MW Tecnologia ::</title>
+    {% endblock %}
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/theme_1564087106285.css' %}" rel="stylesheet">
+    <link href="{% static 'css/estilo.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    {% block menu %}
+
+    <!-- Inicio Menu-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}"><strong>MW Tecnologia</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Notícias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'sobre' %}">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'ajuda' %}">Ajuda</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 ml-lg-4" action="">
+                    <input name="termo" value="" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..."
+                        aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--Fim Menu-->
+
+    {% endblock %}
+
+    {% block conteudo %}
+
+    <!-- Inicio Conteúdo -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- CONTENT -->
+                <div class="card-columns mt-4">
+                    <!-- FOR LOOP -->
+                    <div class="card">
+
+                        <a href="post.html">
+                            <img class="card-img-top" src="{% static 'img/django.png' %}" alt="Card image cap">
+                        </a>
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="post.html">
+                                    Aplicações Web com Django
+                                </a>
+                            </h5>
+                            <p class="card-text">Aplicações web com Django Framework ... É um fato conhecido de todos
+                                que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver
+                                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma
+                                distribuição normal de letras, ao contrário de "Conteúdo aqui, conteúdo aqui", fazendo
+                                com que ele tenha uma aparência similar a de um texto legível. </p>
+
+                            <p class="card-text">
+                                <small class="text-muted">hoje | 1 comentário | Tecnologia</small>
+                            </p>
+
+                            <div class="text-right">
+                                <a href="post.html" class="btn btn-outline-secondary">Ler mais...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/FOR LOOP-->
+                     <!-- FOR LOOP -->
+                     <div class="card">
+
+                        <a href="post.html">
+                            <img class="card-img-top" src="{% static 'img/flutter.jpg' %}" alt="Card image cap">
+                        </a>
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="post.html">
+                                    Flutter
+                                </a>
+                            </h5>
+                            <p class="card-text">Programação Web, Mobile e Desktop com Flutter ... É um fato conhecido de todos
+                                que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver
+                                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma
+                                distribuição normal de letras, ao contrário de "Conteúdo aqui, conteúdo aqui", fazendo
+                                com que ele tenha uma aparência similar a de um texto legível. </p>
+
+                            <p class="card-text">
+                                <small class="text-muted">hoje | 1 comentário | Tecnologia</small>
+                            </p>
+
+                            <div class="text-right">
+                                <a href="post.html" class="btn btn-outline-secondary">Ler mais...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/FOR LOOP-->
+                    <!-- FOR LOOP -->
+                    <div class="card">
+
+                        <a href="post.html">
+                            <img class="card-img-top" src="{% static 'img/ps5.jpg' %}" alt="Card image cap">
+                        </a>
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="post.html">
+                                    Sony anuncia Playstation 5
+                                </a>
+                            </h5>
+                            <p class="card-text">Playstation 5 ... É um fato conhecido de todos
+                                que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver
+                                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma
+                                distribuição normal de letras, ao contrário de "Conteúdo aqui, conteúdo aqui", fazendo
+                                com que ele tenha uma aparência similar a de um texto legível. </p>
+
+                            <p class="card-text">
+                                <small class="text-muted">hoje | 2 comentário | Notícias</small>
+                            </p>
+
+                            <div class="text-right">
+                                <a href="post.html" class="btn btn-outline-secondary">Ler mais...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/FOR LOOP-->
+                </div>
+                <!-- Fim Conteúdo -->
+
+                <!-- Inicio Paginação -->
+                <nav aria-label="pagination">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+                    </ul>
+                  </nav>
+                <!-- Fim Paginação -->
+
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+    {% block rodape %}
+
+    <!-- Inicio Rdapé-->
+    <footer class="bg-primary text-light">
+        <div class="container navbar-dark pt-4 mb-2">
+            <div class="row">
+                <div class="col">
+                    <p class="text-center">Copyright © 2020 - Maycon Willian Alves da Silva</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Fim Rodape-->
+
+    {% endblock %}
+
+    <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    {% block script %}
+    {% endblock %}
+
+</body>
+
+</html>
