@@ -15,3 +15,6 @@ class PaginaSobre(TemplateView):
 
 class PaginaAjuda(TemplateView):
     template_name = 'paginas/ajuda.html'
+
+class PaginaInformacao(TemplateView):
+    template_name = 'paginas/informacao.html'
