@@ -1,0 +1,59 @@
+{% extends 'paginas/modelo.html' %}
+{% load static %}
+
+{% block conteudo %}
+
+<div class="container">
+    <div class="text-center m-4">
+        <h2>Lista de Campos Registrados</h2>      
+    </div>
+
+    <div class="mb-4">
+         <a href="{% url 'cadastrar-perfil' %}" class="btn btn-primary btn-sm" title="Editar">Cadastrar Perfil</a>
+    </div>  
+
+    <div class="text-justify margem-fixa">
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Postado</th>
+                    <th>Imagem do Perfil</th>
+                </tr>
+
+                {% for perfil in object_list %}
+                <tr>
+                    <td>{{ perfil.nome_perfil }}</td>
+                    <td>{{ perfil.endereco }}</td>
+                    <td>{{ perfil.cpf }}</td>
+                    <td>{{ perfil.telefone }}</td>
+                    <td>{{ perfil.imagem_perfil }}</td>
+                    <td>
+                        <a href="{% url 'editar-perfil' perfil.pk %}" class="btn btn-primary btn-sm" title="Editar">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+                        <a href="{% url 'excluir-perfil' perfil.pk %}" class="btn btn-danger btn-sm" title="Excluir">
+                              <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+
+                {% empty %}
+
+                <tr>
+                    <td colspan="3">Nehum Campo Registrado</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>        
+
+    </div>
+
+</div>
+
+{% endblock %}

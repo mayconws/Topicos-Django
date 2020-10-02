@@ -17,13 +17,15 @@ class Postagem(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
 
     def __str__(self):
-        return "{} - {}".format(self.titulo, self.categoria.nome_categoria)
+        return "{}".format(self.titulo)
 
 class Comentario(models.Model):
     nome_comentario = models.CharField(max_length=100, verbose_name="Nome")
     email = models.EmailField()
     data = models.DateField()
     comentario_publicado = models.BooleanField()
+
+    postagem = models.ForeignKey(Postagem, on_delete=models.PROTECT)
 
     def __str__(self):
         return "{}".format(self.nome_comentario)

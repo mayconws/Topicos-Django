@@ -15,6 +15,7 @@
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/bootstrap/css/theme_1564087106285.css' %}" rel="stylesheet">
     <link href="{% static 'css/estilo.css' %}" rel="stylesheet">
+    <link href ="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
 
 </head>
 
@@ -35,8 +36,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">Notícias</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Categorias</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">                           
+                            <a class="dropdown-item" href="{% url 'listar-categoria' %}">Listar</a>                                                                         
+                        <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'listar-postagem' %}">Postagem</a>
+                        <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'listar-comentario' %}">Comentário</a>
+                        </div>
+                        
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'informacao' %}">Informações</a>
@@ -46,6 +55,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'ajuda' %}">Ajuda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfil</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">                       
+                        <a class="dropdown-item" href="{% url 'listar-perfil' %}">Listar</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 ml-lg-4" action="">
