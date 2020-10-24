@@ -1,0 +1,42 @@
+{% extends 'paginas/modelo.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block conteudo %}
+
+<div class="container">
+
+    {% if request.user.is_authenticated %}
+    <div class="margem-fixa">
+        <div class="text-center m-4">
+            <i class="fa fa-ban fa-5x" aria-hidden="true"></i>  
+            <h2>Acesso Negado!</h2>         
+            <p class="lead">Você não tem permissão par acessar este conteúdo!</p>                         
+        </div>    
+    </div>
+    {% else %}
+
+    <div class="text-center m-4">
+        <h2>Autenticação</h2>      
+    </div>
+
+    <div class="text-justify margem-fixa">
+       <div class="col-md-6 mx-auto">
+        <form action="" method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form|crispy }}
+
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">Entrar</button>
+            </div>
+        </form>
+        {% endif %}
+       </div>
+    </div>
+    
+</div>
+
+{% endblock %}
