@@ -33,7 +33,7 @@ class PostagemCreate(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
     group_required = [u"Administrador", u"Usuário"]
     model = Postagem
-    fields = ['titulo', 'data', 'conteudo', 'imagem', 'postado', 'categoria']
+    fields = ['titulo', 'conteudo', 'imagem', 'postado', 'categoria']
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-postagem')
 
@@ -57,7 +57,7 @@ class PostagemCreate(GroupRequiredMixin, LoginRequiredMixin, CreateView):
 class ComentarioCreate(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
     model = Comentario
-    fields = ['nome_comentario', 'email', 'data', 'postagem']
+    fields = ['nome_comentario', 'email', 'postagem']
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-comentario')
 
@@ -109,7 +109,7 @@ class PostagemUpdate(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
     group_required = u"Administrador"
     model = Postagem
-    fields = ['titulo', 'data', 'conteudo', 'imagem', 'postado', 'categoria']
+    fields = ['titulo', 'conteudo', 'imagem', 'postado', 'categoria']
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-postagem')
 
@@ -130,7 +130,7 @@ class PostagemUpdate(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
 class ComentarioUpdate(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
     model = Comentario
-    fields = ['nome_comentario', 'email', 'data', 'postagem']
+    fields = ['nome_comentario', 'email', 'postagem']
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-comentario')
 

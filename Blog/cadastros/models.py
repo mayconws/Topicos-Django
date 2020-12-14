@@ -10,7 +10,7 @@ class Categoria(models.Model):
 
 class Postagem(models.Model):
     titulo = models.CharField(max_length=100, verbose_name="Título")
-    data = models.DateField()
+    data = models.DateField(auto_now=True)
     conteudo = models.TextField()
     imagem = models.ImageField()
     postado = models.BooleanField()
@@ -24,7 +24,7 @@ class Postagem(models.Model):
 class Comentario(models.Model):
     nome_comentario = models.CharField(max_length=100, verbose_name="Nome")
     email = models.EmailField()
-    data = models.DateField()
+    data = models.DateField(auto_now=True)
     comentario_publicado = models.BooleanField(default=True)
     usuario = models.ForeignKey(User, on_delete=models.PROTECT)
     
