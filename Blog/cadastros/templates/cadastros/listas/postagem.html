@@ -23,6 +23,7 @@
                     <th>Imagem</th>
                     <th>Postado</th>
                     <th>Categoria</th>
+                    <th>Usuário</th>
                     <th>Opções</th>
                 </tr>
 
@@ -34,6 +35,7 @@
                     <td>{{ postagem.imagem }}</td>
                     <td>{{ postagem.postado }}</td>
                     <td>{{ postagem.categoria }}</td>
+                    <td>{{ postagem.usuario }}</td>
                     <td>
                         <a href="{% url 'editar-postagem' postagem.pk %}" class="btn btn-primary btn-sm" title="Editar">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
