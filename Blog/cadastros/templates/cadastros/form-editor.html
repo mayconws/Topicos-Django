@@ -1,0 +1,34 @@
+{% extends 'paginas/modelo.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block conteudo %}
+
+<div class="container">
+    <div class="text-center m-4">
+        <h2>{{ titulo }}</h2>
+    </div>
+
+    <div class="text-justify margem-fixa">
+        <form action="" method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form|crispy }}
+            
+            <button class="btn btn-primary btn-sm" type="submit">{{ botao }}</button>
+
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="{% static 'js/jquery.mask.min.js' %}"></script>
+<script src="{% static 'js/jquery-mascara.js' %}"></script>
+
+{% endblock %}

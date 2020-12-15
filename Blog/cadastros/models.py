@@ -25,6 +25,7 @@ class Comentario(models.Model):
     nome_comentario = models.CharField(max_length=100, verbose_name="Nome")
     email = models.EmailField()
     data = models.DateField(auto_now=True)
+    comentario = models.TextField()
     comentario_publicado = models.BooleanField(default=True)
     usuario = models.ForeignKey(User, on_delete=models.PROTECT)
     
